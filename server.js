@@ -4,7 +4,8 @@ const port = 3333;
 const rotas = {
     '/': 'Servidor funcionando normalmente!',
     '/nodeJS': 'Diogo, Ellen, Murilo, Neemias e Pedro',
-    '/techlead': 'Issac monstro'
+    '/techlead': 'Issac monstro',
+    '/nodemon': 'Nodemon está rodando de forma linda!'
 }
 
 const server = http.createServer((requisição, resposta) => {
