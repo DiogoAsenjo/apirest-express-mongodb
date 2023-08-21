@@ -1,4 +1,4 @@
-import { usuarios } from "../../../../banco/usuarios";
+import { usuarios } from "../../../banco/usuarios.js";
 
 function verificandoExistenciaUsuario(usuario) {
         const usuarioExiste = usuarios.find((item) => item["usuario"].includes(usuario));
@@ -7,9 +7,6 @@ function verificandoExistenciaUsuario(usuario) {
         return true;
 }
 
-function cadastrar() {
+export function cadastrarUsuario() {
 
 }
-
-export default all
-
