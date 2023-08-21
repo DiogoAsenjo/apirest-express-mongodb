@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "usuario": "diogo.asenjo@modalgr.com.br",
+        "senha": "diogo123"
+    },
+    {
+        "id": 2,
+        "usuario": "gabriel.matiucci@modalgr.com.br",
+        "senha": "gabrielremador"
+    },
+    {
+        "id": 3,
+        "usuario": "ryan.capurso@modalgr.com.br",
+        "senha": "eletricas2"
+    },
+    {
+        "id": 4,
+        "usuario": "yasmin.assaf@modalgr.com.br",
+        "senha": "batata1234"
+    },
+    {
+        "id": 5,
+        "usuario": "eros.verde@modalgr.com.br",
+        "senha": "pilantra2023"
+    },
+    {
+        "id": 6,
+        "usuario": "samyra.lima@modalgr.com.br",
+        "senha": "rhmaneiro2021"
+    },
+    {
+        "id": 7,
+        "usuario": "isabel.martins@modalgr.com.br",
+        "senha": "truecrime666"
+    },
+    {
+        "id": 8,
+        "usuario": "joao.fredianni@modalgr.com.br",
+        "senha": "milnomes"
+    },
+    {
+        "id": 9,
+        "usuario": "ingrid.fernanda@modalgr.com.br",
+        "senha": "docinhos123"
+    },
+    {
+        "id": 10,
+        "usuario": "isaac.kanashiro@modalgr.com.br",
+        "senha": "techleadnode"
+    }
+]
