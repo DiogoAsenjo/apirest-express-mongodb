@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { usuarios } from "../banco/usuarios.js";
 import { constroladorCadastro } from "../modulos/usuarios/criar/controlador-cadastrando.js";
+import { controladorAtualizacao } from "../modulos/usuarios/atualizar/controlador-atualizando.js";
 
 const rotas = Router();
 
@@ -24,7 +25,7 @@ rotas.post('/cadastrar', (req, res) => {
 
 //Alterar usuário
 rotas.patch('/atualizar', (req, res) => {
-
+    controladorAtualizacao(req, res);
 })
 
 export default rotas
