@@ -1,19 +1,19 @@
 import { usuarios } from "../../../banco/usuarios.js";
 
-function verificacaoSenhaSegura(senhaVerificada) {
-        if(senhaVerificada.length < 8) {
+function verificacaoSenhaSegura(senha) {
+        if(senha.length < 8) {
             return `A senha deve ter no mínimo 8 caracteres`; 
         }
-        if((!/[a-z]/.test(senhaVerificada))) {
+        if((!/[a-z]/.test(senha))) {
             return `A senha deve ter ao menos uma letra minúscula`;
         }
-        if((!/[A-Z]/.test(senhaVerificada))) {
+        if((!/[A-Z]/.test(senha))) {
             return `A senha deve ter ao menos uma letra maiúscula`;
         }
-        if((!/[0-9]/.test(senhaVerificada))) {
+        if((!/[0-9]/.test(senha))) {
             return `A senha deve ter ao menos um número`;
         }
-        if((!/\W/.test(senhaVerificada))) {
+        if((!/\W/.test(senha))) {
             return `A senha deve ter ao menos um caracter especial`;
         }
     
@@ -22,12 +22,14 @@ function verificacaoSenhaSegura(senhaVerificada) {
 
 export function cadastrarUsuario(usuario, senha) {
         const usuarioExistente = usuarios.find((item) => item["usuario"].includes(usuario));
-        const usandoEmailInstitucional = usuario.endsWith("@modalgr.com.br");
-        const senhaInsegura = verificacaoSenhaSegura(senha);
-
         if(usuarioExistente) return 'Usuário já existe';
+
+        const usandoEmailInstitucional = usuario.endsWith("@modalgr.com.br");
         if(!usandoEmailInstitucional) return 'É preciso se cadastrar usando um e-mail @modalgr';
+
+        const senhaInsegura = verificacaoSenhaSegura(senha);
         if(typeof senhaInsegura === 'string') return senhaInsegura;
+
         usuarios.push({usuario, senha});
         return 'Usuário cadastrado com sucesso!'
 }
