@@ -1,18 +1,8 @@
-const http = require('http');
-const port = 3333;
+import app from './src/app.js'
 
-const rotas = {
-    '/': 'Servidor funcionando normalmente!',
-    '/nodeJS': 'Diogo, Ellen, Murilo, Neemias e Pedro',
-    '/techlead': 'Issac monstro',
-    '/nodemon': 'Nodemon está rodando de forma linda!'
-}
+const port = process.env.PORT || 3333; //É boa prática pra ir se acostumando já colocar o process.env, pois será o futuro ambiente de produção. 
 
-const server = http.createServer((requisição, resposta) => {
-    resposta.writeHead(200, {'Content-Type': 'text/plain'});
-    resposta.end(rotas[requisição.url]);
-})
 
-server.listen(port, () => {
+app.listen(port, () => {
     console.log(`Servidor rodando na porta http://localhost:${port}`);
 })

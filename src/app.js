@@ -1,10 +1,10 @@
-import express from express;
+import  express from 'express';
 
 const app = express();
 
 const pessoas = [
-    {nome: 'Diogo', sobrenome: 'Asenjo'},
-    {nome: 'Bianca', sobrenome: 'Borges'}
+    {nome: 'Diogo', "sobrenome": 'Asenjo'},
+    {nome: 'Bianca', "sobrenome": 'Borges'}
 ]
 
 app.get('/', (requisição, resposta) => {
@@ -14,3 +14,5 @@ app.get('/', (requisição, resposta) => {
 app.get('/pessoas', (requisição, resposta) => {
     resposta.status(200).json(pessoas);
 })
+
+export default app
