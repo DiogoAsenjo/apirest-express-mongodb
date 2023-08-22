@@ -20,16 +20,19 @@ function verificacaoSenhaSegura(senha) {
         return true;
     }
 
-export function atualizarSenha(usuario, senha) {
-        const usuarioExistente = usuarios.find((item) => item["usuario"].includes(usuario));
+export function atualizarSenha(usuario, senhaAntiga, senhaNova) {
+        const usuarioExistente = usuarios.find((item) => item["usuario"] === usuario);
         if(!usuarioExistente) return 'Usuário não existe, digite um usuário válido!';
 
-        //Função para validar a senha. Procurar o index com base no usuario e verificar se a senha bate.
+        const posicaoUsuario = usuarios.findIndex((item) => item.usuario === usuario);
+        const senhaCorreta = usuarios[posicaoUsuario].senha === senhaAntiga;
+        if(!senhaCorreta) return 'Senha antiga está incorreta, digite novamente!';
+        
+        const senhaInsegura = verificacaoSenhaSegura(senhaNova);
+        if(typeof senhaInsegura === 'string') return senhaInsegura;
 
-        //Validada a senha, criar a função para alterar a senha com base no index pego na parte de cima. Usar a verificação de senha segura para saber se bate com os critérios de segurança
+        if(senhaNova === senhaAntiga) return 'A senha nova não pode ser igual a antiga!';
 
-
-        //Alterar a senha no array de objetos. Provavelmente usando splice();
-        usuarios.push({usuario, senha});
+        usuarioExistente.senha = senhaNova;
         return 'Senha alterada com sucesso!'
 }
