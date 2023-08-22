@@ -1,13 +1,13 @@
 import { cadastrarUsuario } from "./cadastrando.js";
 
 export function constroladorCadastro (req, res) {
-    const { usuario, senha } = req.body;
+    const { login, senha } = req.body;
 
-    if(!usuario || !senha) {
+    if(!login || !senha) {
         return res.status(400).send('Os campos usuario e senha são obrigatórios!');
     }
 
-    const resposta = cadastrarUsuario(usuario, senha);
+    const resposta = cadastrarUsuario(login, senha);
     
     return res.status(201).send(resposta);
 }

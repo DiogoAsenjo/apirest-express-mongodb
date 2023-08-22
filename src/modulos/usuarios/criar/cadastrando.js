@@ -21,16 +21,16 @@ function verificacaoSenhaSegura(senha) {
         return true;
     }
 
-export function cadastrarUsuario(usuario, senha) {
-        const usuarioExistente = usuarios.find((item) => item["usuario"] === usuario);
+export function cadastrarUsuario(login, senha) {
+        const usuarioExistente = usuarios.find((item) => item["login"] === login);
         if(usuarioExistente) return 'Usuário já existe';
 
-        const usandoEmailInstitucional = usuario.endsWith("@modalgr.com.br");
+        const usandoEmailInstitucional = login.endsWith("@modalgr.com.br");
         if(!usandoEmailInstitucional) return 'É preciso se cadastrar usando um e-mail @modalgr';
 
         const senhaInsegura = verificacaoSenhaSegura(senha);
         if(typeof senhaInsegura === 'string') return senhaInsegura;
 
-        usuarios.push(new Usuario(usuario, senha));
+        usuarios.push(new Usuario(login, senha));
         return 'Usuário cadastrado com sucesso!';
 }

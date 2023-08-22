@@ -20,11 +20,11 @@ function verificacaoSenhaSegura(senha) {
         return true;
     }
 
-export function atualizarSenha(usuario, senhaAntiga, senhaNova) {
-        const usuarioExistente = usuarios.find((item) => item["usuario"] === usuario);
+export function atualizarSenha(login, senhaAntiga, senhaNova) {
+        const usuarioExistente = usuarios.find((item) => item["login"] === login);
         if(!usuarioExistente) return 'Usuário não existe, digite um usuário válido!';
 
-        const posicaoUsuario = usuarios.findIndex((item) => item.usuario === usuario);
+        const posicaoUsuario = usuarios.findIndex((item) => item.login === login);
         const senhaCorreta = usuarios[posicaoUsuario].senha === senhaAntiga;
         if(!senhaCorreta) return 'Senha antiga está incorreta, digite novamente!';
         
