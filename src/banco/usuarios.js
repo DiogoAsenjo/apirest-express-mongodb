@@ -1,10 +1,10 @@
 export const usuarios = [
     {
         usuario: "diogo.asenjo@modalgr.com.br",
-        senha: "diogo123"
+        senha: "Diogo123@"
     },
     {
         usuario: "gabriel.matiucci@modalgr.com.br",
-        senha: "gabrielremador"
+        senha: "Gabriel@remador96"
     }
 ]

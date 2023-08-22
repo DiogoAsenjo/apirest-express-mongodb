@@ -1,3 +1,4 @@
+import { Usuario } from "../../../banco/usuario.model.js";
 import { usuarios } from "../../../banco/usuarios.js";
 
 function verificacaoSenhaSegura(senha) {
@@ -30,6 +31,6 @@ export function cadastrarUsuario(usuario, senha) {
         const senhaInsegura = verificacaoSenhaSegura(senha);
         if(typeof senhaInsegura === 'string') return senhaInsegura;
 
-        usuarios.push({usuario, senha});
-        return 'Usuário cadastrado com sucesso!'
+        usuarios.push(new Usuario(usuario, senha));
+        return 'Usuário cadastrado com sucesso!';
 }
