@@ -17,7 +17,9 @@ rotas.get('/pessoas', (requisicao, resposta) => {
 })
 
 //Mostrar apenas um usuário específico
-//rotas.get('')
+rotas.get('/pessoas/:id', (req, res) => {
+    res.status(200).json(usuarios[req.params.id].login);
+})
 
 //Cadastrar um usuário
 rotas.post('/cadastrar', (req, res) => {
