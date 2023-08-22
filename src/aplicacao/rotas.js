@@ -2,6 +2,7 @@ import { Router } from "express";
 import { usuarios } from "../banco/usuarios.js";
 import { constroladorCadastro } from "../modulos/usuarios/criar/controlador-cadastrando.js";
 import { controladorAtualizacao } from "../modulos/usuarios/atualizar/controlador-atualizando.js";
+import { controladorDeleta } from "../modulos/usuarios/deletar/controlador-deletando.js";
 
 const rotas = Router();
 
@@ -26,6 +27,11 @@ rotas.post('/cadastrar', (req, res) => {
 //Alterar usuário
 rotas.patch('/atualizar', (req, res) => {
     controladorAtualizacao(req, res);
+})
+
+//Deletar usuário
+rotas.delete('/deletar', (req, res) => {
+    controladorDeleta(req, res);
 })
 
 export default rotas

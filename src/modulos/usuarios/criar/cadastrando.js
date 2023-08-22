@@ -21,7 +21,7 @@ function verificacaoSenhaSegura(senha) {
     }
 
 export function cadastrarUsuario(usuario, senha) {
-        const usuarioExistente = usuarios.find((item) => item["usuario"].includes(usuario));
+        const usuarioExistente = usuarios.find((item) => item["usuario"] === usuario);
         if(usuarioExistente) return 'Usuário já existe';
 
         const usandoEmailInstitucional = usuario.endsWith("@modalgr.com.br");
